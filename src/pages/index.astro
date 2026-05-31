@@ -55,6 +55,19 @@ import Layout from "../layouts/Layout.astro";
 		<section class="posts" aria-label="Posts">
 			<p class="empty">No posts yet.</p>
 		</section>
+
+		<section class="archive" aria-label="Archive">
+			<p class="archive-note">
+				View my old Medium posts (from 2021–2023)
+				<a
+					href="https://reybahl.medium.com"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					here!
+				</a>
+			</p>
+		</section>
 	</main>
 </Layout>
 
@@ -120,5 +133,27 @@ import Layout from "../layouts/Layout.astro";
 		margin: 0;
 		color: var(--muted);
 		font-size: 0.9375rem;
+	}
+
+	.archive {
+		margin-top: 2.5rem;
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.archive-note {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.9375rem;
+	}
+
+	.archive-note a {
+		color: var(--text);
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.archive-note a:hover {
+		text-decoration: none;
 	}
 </style>
