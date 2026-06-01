@@ -1,4 +1,6 @@
 ---
+import SiteFooter from "../components/SiteFooter.astro";
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -22,6 +24,7 @@ const {
 	</head>
 	<body>
 		<slot />
+		<SiteFooter />
 	</body>
 </html>
 
