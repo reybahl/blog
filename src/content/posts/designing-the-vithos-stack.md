@@ -1,7 +1,7 @@
 ---
 title: "Designing the Vithos Stack"
 description: "The architectural choices behind Vithos: a type-safe React + Hono monorepo built for Cloudflare Workers."
-date: 2026-06-07
+date: 2026-06-06
 draft: false
 ---
 
