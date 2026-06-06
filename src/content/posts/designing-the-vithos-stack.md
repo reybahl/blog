@@ -2,7 +2,7 @@
 title: "Designing the Vithos Stack"
 description: "The architectural choices behind Vithos: a type-safe React + Hono monorepo built for Cloudflare Workers."
 date: 2026-06-07
-draft: true
+draft: false
 ---
 
 [Vithos](https://github.com/reybahl/vithos) is a type-safe, opinionated, full-stack template built specifically for Cloudflare Workers. I've tried out many frameworks and templates for building full-stack apps and finally landed on something that checks all my boxes: modern, type-safe, lightweight, and inexpensive at scale.
