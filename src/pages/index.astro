@@ -112,7 +112,6 @@ function formatDate(date: Date) {
 		max-width: 32rem;
 		margin: 0 auto;
 		padding: 4rem 1.5rem 3rem;
-		min-height: 100dvh;
 	}
 
 	.actions {
@@ -130,15 +129,16 @@ function formatDate(date: Date) {
 		padding: 0.375rem 0.875rem;
 		border: 1px solid var(--border);
 		border-radius: 0.375rem;
-		background: var(--button-bg);
-		color: var(--button-text);
+		background: transparent;
+		color: var(--text);
 		font-size: 0.875rem;
 		line-height: 1;
 		text-decoration: none;
+		transition: border-color 0.15s ease;
 	}
 
 	.button:hover {
-		background: var(--button-hover);
+		border-color: var(--text);
 	}
 
 	.button svg {
