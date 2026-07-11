@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.4.0"
+    "astro": "^6.4.0",
+    "simple-icons": "^16.25.0"
   }
 }

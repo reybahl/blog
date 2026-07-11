@@ -1,0 +1,30 @@
+---
+import {
+	brandIcons,
+	brandIconScale,
+	type BrandName,
+} from "../data/brandIcons";
+
+interface Props {
+	name: BrandName;
+	size?: number;
+}
+
+const { name, size = 14 } = Astro.props;
+const path = brandIcons[name];
+const scale = brandIconScale[name] ?? 1;
+const transform =
+	scale === 1 ? undefined : `translate(12 12) scale(${scale}) translate(-12 -12)`;
+---
+
+<svg
+	role="img"
+	width={size}
+	height={size}
+	viewBox="0 0 24 24"
+	xmlns="http://www.w3.org/2000/svg"
+	fill="currentColor"
+	aria-hidden="true"
+>
+	<path d={path} transform={transform}></path>
+</svg>
