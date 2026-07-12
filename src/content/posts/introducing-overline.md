@@ -42,12 +42,16 @@ Here's what a compiled script looks like after that pass. It's a short sequence 
 
 Playback is separate from recording and compilation, and does not call any models. The saved script matches elements against the live DOM and performs each action with timing waits. You can run a macro from the command palette (`⌘⇧P` / `Ctrl⇧P`) or via a keyboard shortcut.
 
+If the intent marks a value you'll provide each run (e.g., a PR number or search term), Overline will turn that into a parameter. Playback prompts for it instead of baking the demo literal into the script.
+
 Saved macros live in the options page, with run scope, shortcuts, and the compiled script for each one:
 
 ![Overline options page listing saved macros](/images/overline-macros-list.png)
 
 ## Usage
 
-Overline is a Chromium extension. It is currently in review with the Chrome Web Store. For now, you can load it locally from the source code (instructions in the [README](https://github.com/reybahl/overline/blob/main/README.md)). You will need an LLM API key to use it.
+Overline is a Chromium extension. It is currently in review with the Chrome Web Store. 
 
-Overline is fully open source. You can find the code on GitHub at [reybahl/overline](https://github.com/reybahl/overline).
+Since it is open source (at [reybahl/overline](https://github.com/reybahl/overline)), you can load it locally from the source code (instructions in the [README](https://github.com/reybahl/overline/blob/main/README.md)). You will need an LLM API key to use it.
+
+I would really love to get any feedback! If there are sites Overline does not work well on, please file an issue on [GitHub](https://github.com/reybahl/overline/issues).
