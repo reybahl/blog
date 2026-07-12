@@ -13,6 +13,7 @@ const formattedDate = date.toLocaleDateString("en-US", {
 	year: "numeric",
 	month: "long",
 	day: "numeric",
+	timeZone: "UTC",
 });
 ---
 
@@ -104,5 +105,12 @@ const formattedDate = date.toLocaleDateString("en-US", {
 
 	.content :global(a:hover) {
 		text-decoration: none;
+	}
+
+	.content :global(img) {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 1.25rem auto 0;
 	}
 </style>
