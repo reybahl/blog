@@ -8,7 +8,7 @@ After changing dependencies, update and commit `bun.lock` (CI runs `bun install 
 
 ## Commits
 
-Use [Conventional Commits](https://www.conventionalcommits.org/), lowercase:
+Use [Conventional Commits](https://www.conventionalcommits.org/), lowercase. Subject line only — no body or description.
 
 - `feat: …` — new feature
 - `fix: …` — bug fix
