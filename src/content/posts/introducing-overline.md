@@ -5,6 +5,8 @@ date: 2026-07-11
 draft: true
 ---
 
+## Intro
+
 Overline is a Chromium extension for AI-assisted browser macros. You describe an intent, demonstrate the workflow once, and Overline compiles a reusable script you can replay from `⌘⇧P` / `Ctrl⇧P`.
 
 Recording uses your own LLM key. Playback is deterministic and does not call models.
@@ -21,7 +23,19 @@ Overline was born out of this desire: not just for GitHub, but for any tool acro
 
 ## Quick Demo
 
+[video here]
+
 ## How it works
+
+You give an intent (e.g. "go back to the PR conversation tab and merge it into main”). Overline demonstrates that workflow once with the LLM, then compiles a reusable script.
+
+![How Overline works: record, compile, sanitize, saved macro](/images/overline-how-it-works.svg)
+
+- **Record**: one LLM turn per step from the live DOM and intent. No separate planning pass.
+- **Compile**: one compiled step per demo step, same order; generalizes selectors and may rewrite clicks to navigate steps where reasonable.
+- **Sanitize**: deterministic only; drops hallucinated match fields.
+
+Playback is separate, with no LLM: match + perform action with timing waits.
 
 ## Usage
 
