@@ -21,21 +21,29 @@ function formatDate(date: Date) {
 <Layout>
 	<main class="page">
 		<header class="header">
-			<h1>Overline</h1>
-			<p class="tagline">
-				Record and run browser macros with AI assistance. Fully local.
-			</p>
+			<h1>Reyansh Bahl</h1>
+			<p class="tagline">Writing on software and other things.</p>
 
 			<div class="actions">
 				<a
-					href="https://github.com/reybahl/patch"
+					href="https://x.com/reyanshbahl"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="button"
-					aria-label="View Overline on GitHub"
+					aria-label="Follow @reyanshbahl on X"
+				>
+					<BrandIcon name="X" />
+					@reyanshbahl
+				</a>
+				<a
+					href="https://github.com/reybahl"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="button"
+					aria-label="View @reybahl on GitHub"
 				>
 					<BrandIcon name="GitHub" />
-					reybahl/patch
+					@reybahl
 				</a>
 			</div>
 		</header>
@@ -63,6 +71,19 @@ function formatDate(date: Date) {
 					</ul>
 				)
 			}
+		</section>
+
+		<section class="archive" aria-label="Archive">
+			<p class="archive-note">
+				View my old Medium posts (from 2021–2023)
+				<a
+					href="https://reybahl.medium.com"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					here!
+				</a>
+			</p>
 		</section>
 	</main>
 </Layout>
@@ -172,5 +193,27 @@ function formatDate(date: Date) {
 		color: var(--muted);
 		font-size: 0.875rem;
 		line-height: 1.5;
+	}
+
+	.archive {
+		margin-top: 2.5rem;
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.archive-note {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.9375rem;
+	}
+
+	.archive-note a {
+		color: var(--text);
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.archive-note a:hover {
+		text-decoration: none;
 	}
 </style>
