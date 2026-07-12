@@ -107,10 +107,19 @@ const formattedDate = date.toLocaleDateString("en-US", {
 		text-decoration: none;
 	}
 
+	.content :global(picture) {
+		display: block;
+		margin: 1.25rem auto 0;
+	}
+
 	.content :global(img) {
 		display: block;
 		max-width: 100%;
 		height: auto;
 		margin: 1.25rem auto 0;
+	}
+
+	.content :global(picture img) {
+		margin: 0;
 	}
 </style>

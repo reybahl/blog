@@ -5,7 +5,10 @@ date: 2026-07-11
 draft: false
 ---
 
-![Overline command palette on a GitHub pull request](/images/overline-command-palette.png)
+<picture>
+  <source srcset="/images/overline-command-palette-dark.png" media="(prefers-color-scheme: dark)" />
+  <img src="/images/overline-command-palette.png" alt="Overline command palette on a GitHub pull request" />
+</picture>
 
 ## Intro
 
@@ -34,7 +37,10 @@ You give an intent (e.g. "go back to the PR conversation tab and merge it into m
 
 Here's what a compiled script looks like after that pass. It's a short sequence of match-and-act steps you can edit, assign a shortcut to, or replay later:
 
-![Compiled Overline script for copying the GitHub CLI clone command](/images/overline-compiled-script.png)
+<picture>
+  <source srcset="/images/overline-compiled-script-dark.png" media="(prefers-color-scheme: dark)" />
+  <img src="/images/overline-compiled-script.png" alt="Compiled Overline script for copying the GitHub CLI clone command" />
+</picture>
 
 - **Sanitize**: Compile is trusted to generalize, but it may still invent match fields that were never on the demo element. Sanitize walks each compiled step against that step's `recordedMatch` and drops anything that was not present on (or a valid generalization of) the demo capture (for example, an unstable framework-generated `id` like `useId` in React). It also applies some structural cleanup, like conflicting href strategies, unresolved path placeholders in click matches, and invalid navigate steps that get folded back into clicks.
 
@@ -46,7 +52,10 @@ If the intent marks a value you'll provide each run (e.g., a PR number or search
 
 Saved macros live in the options page, with run scope, shortcuts, and the compiled script for each one:
 
-![Overline options page listing saved macros](/images/overline-macros-list.png)
+<picture>
+  <source srcset="/images/overline-macros-list-dark.png" media="(prefers-color-scheme: dark)" />
+  <img src="/images/overline-macros-list.png" alt="Overline options page listing saved macros" />
+</picture>
 
 ## Usage
 
