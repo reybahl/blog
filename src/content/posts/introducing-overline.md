@@ -5,6 +5,8 @@ date: 2026-07-11
 draft: false
 ---
 
+![Overline command palette on a GitHub pull request](/images/overline-command-palette.png)
+
 ## Intro
 
 Overline is a Chromium extension for AI-assisted browser macros. You describe an intent, demonstrate the workflow once, and Overline compiles a reusable script you can replay from `⌘⇧P` / `Ctrl⇧P`.
@@ -29,11 +31,20 @@ You give an intent (e.g. "go back to the PR conversation tab and merge it into m
 
 - **Record**: The LLM takes a series of turns from the live DOM and intent. Instead of feeding the entire DOM to the LLM (which can be infeasible to fit into the context window on large pages), the LLM is given tools to query through an index of interactive elements, including buttons, links, inputs, and more. Matching is deterministic and forgiving across labels, visible text, placeholders, and hrefs, so exact button copy is not required. When search is too vague, it can also browse a small page of that index. The record step is complete once the LLM has determined that the desired end state has been reached.
 - **Compile**: To turn the demo into a reusable script, we use another LLM pass. Recording alone is not enough since the demo is tied to one page in one state, with concrete selectors and URLs from that session. Compile gets the intent, the start and end URLs, and each recorded step with its grounded result: the `recordedMatch` captured from the live DOM when that click or fill actually ran (labels, text, hrefs, etc.), alongside the page URL at that step. From that, it generalizes matches so the script still finds the right controls on later runs, and may rewrite pure link clicks into navigate steps scoped with path placeholders. It has been carefully tuned to not invent targets that were not in the demo, but issues may still arise, so next is a deterministic post-compile pass.
+
+Here's what a compiled script looks like after that pass. It's a short sequence of match-and-act steps you can edit, assign a shortcut to, or replay later:
+
+![Compiled Overline script for copying the GitHub CLI clone command](/images/overline-compiled-script.png)
+
 - **Sanitize**: Compile is trusted to generalize, but it may still invent match fields that were never on the demo element. Sanitize walks each compiled step against that step's `recordedMatch` and drops anything that was not present on (or a valid generalization of) the demo capture (for example, an unstable framework-generated `id` like `useId` in React). It also applies some structural cleanup, like conflicting href strategies, unresolved path placeholders in click matches, and invalid navigate steps that get folded back into clicks.
 
 ### Playback
 
 Playback is separate from recording and compilation, and does not call any models. The saved script matches elements against the live DOM and performs each action with timing waits. You can run a macro from the command palette (`⌘⇧P` / `Ctrl⇧P`) or via a keyboard shortcut.
+
+Saved macros live in the options page, with run scope, shortcuts, and the compiled script for each one:
+
+![Overline options page listing saved macros](/images/overline-macros-list.png)
 
 ## Usage
 
