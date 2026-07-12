@@ -2,7 +2,7 @@
 title: Introducing Overline
 description: Generate a browser workflow using an LLM, then run it anytime from a command palette or keyboard shortcut. Fully local, BYOK.
 date: 2026-07-11
-draft: true
+draft: false
 ---
 
 ## Intro
@@ -36,10 +36,11 @@ You give an intent (e.g. "go back to the PR conversation tab and merge it into m
 - **Sanitize**: Compile is trusted to generalize, but it may still invent match fields that were never on the demo element. Sanitize walks each compiled step against that step's `recordedMatch` and drops anything that was not present on (or a valid generalization of) the demo capture (for example, an unstable framework-generated `id` like `useId` in React). It also applies some structural cleanup, like conflicting href strategies, unresolved path placeholders in click matches, and invalid navigate steps that get folded back into clicks.
 
 ### Playback
-Playback is separate from recording and compilation. It is a script that matches the elements in the script to the live DOM, and performs the actions. Playback is separate from recording, with no LLM: match + perform action with timing waits. Playback can be invoked from the command palette, or through a keyboard shortcut.
+
+Playback is separate from recording and compilation, and does not call any models. The saved script matches elements against the live DOM and performs each action with timing waits. You can run a macro from the command palette (`⌘⇧P` / `Ctrl⇧P`) or via a keyboard shortcut.
 
 ## Usage
 
-Overline is a Chromium extension. You can install it from the Chrome Web Store [here](). You will need an LLM API key to use it.
+Overline is a Chromium extension. It is currently in review with the Chrome Web Store and should hopefully be available soon! For now, you can load it locally from the source code (instructions in the [README](https://github.com/reybahl/overline/blob/main/README.md)). You will need an LLM API key to use it.
 
-Overline is also fully open source. You can find the code on GitHub at [reybahl/overline](https://github.com/reybahl/overline). You can load this extension locally from the source code (instructions in the [README](https://github.com/reybahl/overline/blob/main/README.md)).
+Overline is fully open source. You can find the code on GitHub at [reybahl/overline](https://github.com/reybahl/overline).
